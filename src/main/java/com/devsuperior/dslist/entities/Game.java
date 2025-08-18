@@ -11,30 +11,33 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String titulo;
+    private String title;
 
-    @Column(name = "game_ano")
-    private Integer ano;
-    private String genero;
-    private String plataformas;
-    private Double pontuacao;
+    @Column(name = "game_year")
+    private Integer year;
+    private String genre;
+    private String platforms;
+    private Double score;
     private String imgUrl;
-    private String descricaoCurta;
-    private String descricaoLonga;
+
+    @Column(columnDefinition = "TEXT")
+    private String shortDescription;
+
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;
 
     public Game(){}
 
-    public Game(Long id, String titulo, Integer ano, String genero, String plataformas,
-                Double pontuacao, String imgUrl, String descricaoLonga, String descricaoCurta) {
+    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription, String longDescription) {
         this.id = id;
-        this.titulo = titulo;
-        this.ano = ano;
-        this.genero = genero;
-        this.plataformas = plataformas;
-        this.pontuacao = pontuacao;
+        this.title = title;
+        this.year = year;
+        this.genre = genre;
+        this.platforms = platforms;
+        this.score = score;
         this.imgUrl = imgUrl;
-        this.descricaoLonga = descricaoLonga;
-        this.descricaoCurta = descricaoCurta;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
     }
 
     public Long getId() {
@@ -45,44 +48,44 @@ public class Game {
         this.id = id;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public Integer getAno() {
-        return ano;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setAno(Integer ano) {
-        this.ano = ano;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public String getPlataformas() {
-        return plataformas;
+    public String getPlatforms() {
+        return platforms;
     }
 
-    public void setPlataformas(String plataformas) {
-        this.plataformas = plataformas;
+    public void setPlatforms(String platforms) {
+        this.platforms = platforms;
     }
 
-    public Double getPontuacao() {
-        return pontuacao;
+    public Double getScore() {
+        return score;
     }
 
-    public void setPontuacao(Double pontuacao) {
-        this.pontuacao = pontuacao;
+    public void setScore(Double score) {
+        this.score = score;
     }
 
     public String getImgUrl() {
@@ -93,20 +96,20 @@ public class Game {
         this.imgUrl = imgUrl;
     }
 
-    public String getDescricaoCurta() {
-        return descricaoCurta;
+    public String getShortDescription() {
+        return shortDescription;
     }
 
-    public void setDescricaoCurta(String descricaoCurta) {
-        this.descricaoCurta = descricaoCurta;
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
-    public String getDescricaoLonga() {
-        return descricaoLonga;
+    public String getLongDescription() {
+        return longDescription;
     }
 
-    public void setDescricaoLonga(String descricaoLonga) {
-        this.descricaoLonga = descricaoLonga;
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
     }
 
     @Override
